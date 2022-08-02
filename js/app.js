@@ -26,6 +26,7 @@ function Location(location, minCust, maxCust, avgCookie, hours, sales, daily){
         }
         this.daily = dailySales;
     };
+
     // Calling methods in all objects 
     this.ranCust();
     this.salesPerHour();
@@ -34,8 +35,10 @@ function Location(location, minCust, maxCust, avgCookie, hours, sales, daily){
 
 // Array for store hours
 let hoursArr = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
-let allTotals = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,];
-// Array(hoursArr.length).fill(0); 
+
+// Empty array to hold hourly totals and daily totals
+let allTotals = Array(hoursArr.length).fill(0); 
+// [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,];
 
 // Creating new location objects using constructor 
 let seattle = new Location ('Seattle', 23, 65, 6.3, hoursArr, [], 0);
@@ -105,6 +108,28 @@ Location.prototype.render = function () {
  paris.render();
  lima.render();
 
+
+ // Help from Manuch!
+function calcTotalSales(i) {
+    let hourlyTotal = 0;
+    let dailyTotal = 0;
+
+    // iterates over store locations and hours open, then accesses each store location and each sales per hour, adding them together
+    for (let i = 0; i < storeLocations.length; i++){
+        for (let j = 0; j < hoursArr.length; j++){
+            hourlyTotal += storeLocations[i].sales[j];
+            allTotals[j] += storeLocations[i].sales[j];
+        }
+
+        dailyTotal += storeLocations[i].daily;
+    }
+    allTotals.push(dailyTotal);
+}
+
+// console.log(allTotals);
+calcTotalSales();
+
+// Creates totals footer and adds in total values
 function renderFooter() {
     let row = document.createElement('tr');
     let cell = document.createElement('td');
@@ -120,24 +145,6 @@ function renderFooter() {
     table.appendChild(row);
 }
 
-calcTotalSales();
 renderFooter();
 
-// Help from Manuch!
-function calcTotalSales(i) {
-    let hourlyTotal = 0;
-    let dailyTotal = 0;
 
-
-    for (let i = 0; i < storeLocations.length; i++){
-        for (let j = 0; j < hoursArr.length; j++){
-            hourlyTotal += storeLocations[i].sales[j];
-            allTotals[j] += storeLocations[i].sales[j];
-        }
-
-        dailyTotal += storeLocations[i].daily;
-    }
-    allTotals.push(dailyTotal);
-}
-
-console.log(allTotals);
