@@ -75,7 +75,7 @@ function renderHeaders() {
       row.appendChild(head);
     };
     head = document.createElement('th');
-    head.innerText = 'Total';
+    head.innerText = 'Totals';
 
     row.appendChild(head);
     table.appendChild(row);
@@ -146,5 +146,3 @@ function renderFooter() {
 }
 
 renderFooter();
-
-

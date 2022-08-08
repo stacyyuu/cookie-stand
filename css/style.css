@@ -1,8 +1,18 @@
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 80%;
+    margin: auto;
+}
+
+html, body { height: 100%;}
+
+body > footer {
+  position: sticky;
+  top: 100vh;
 }
 
 h1 {
+    margin-top: 25px;
     text-align: center;
     font-size: 2rem;
 }
@@ -11,6 +21,7 @@ table {
     margin: auto; 
     /* centers the table, by contents filling up each side*/
     border-spacing: 0px;
+    border-radius: 10px;
 }
 
 table, th, td {
@@ -24,6 +35,52 @@ th, td {
 td {
     background-color: salmon;
     color: white;
+}
+
+#homepage {
+    text-align: center;
+    color: salmon;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+/* Main page */
+
+#header {
+    display: flex;
+    justify-content: center;
+    background-color: salmon;
+    height: 70px;
+}
+
+#storename {
+    margin-top: 18px;
+    margin-right: 10px;
+    color: white;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+#intro {
+    display: flex;
+    flex-direction: column;
+    color: salmon;
+    margin-top: 30px;
+    font-size: 30px;
+    align-items: center;
+}
+
+#salmon {
+    margin-top: 15px;
+    height: 100px;
+    width: 350px;
+}
+
+li {
+    display: inline-block;
+    padding: 20px;
+    margin-top: 10px;
 }
 
 footer {
