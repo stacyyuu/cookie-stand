@@ -15,9 +15,33 @@
     <table id = 'data'>
 
     </table>
+
+    <br>
+    <form id = "newStore">
+        <fieldset>
+          <legend>Create a New Store:</legend>
+          <label>Location Name:
+          <input type="text" id = "modified" name="name"><br><br>
+          </label>
+          <label>Minimun Customers:
+          <input type= "number" step= ".01" name= "minCust"><br><br>
+          </label>
+          <label>Maximum Customers:
+          <input type= "number" step= ".01" name= "maxCust"><br><br>
+          </label>
+          <label>Average Cookies Sold:
+            <input type= "number" step= ".01" name= "avgCookies"><br><br>
+            </label>
+        
+          <input type= "submit" value= "Submit">
+        </fieldset>
+      </form>
+
     <p id = "homepage">
     <a id = "homepage" href = "index.html">Back to Homepage</a>
     </p>
+
+  
 
     <footer>&copy; Salmon Cookies 2022</footer>
     <script src ="js/app.js"></script>

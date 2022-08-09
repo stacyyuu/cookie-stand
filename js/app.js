@@ -36,10 +36,6 @@ function Location(location, minCust, maxCust, avgCookie, hours, sales, daily){
 // Array for store hours
 let hoursArr = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 
-// Empty array to hold hourly totals and daily totals
-let allTotals = Array(hoursArr.length).fill(0); 
-// [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,];
-
 // Creating new location objects using constructor 
 let seattle = new Location ('Seattle', 23, 65, 6.3, hoursArr, [], 0);
 console.log(seattle);
@@ -57,7 +53,6 @@ let lima = new Location ('Lima', 2, 16, 4.6, hoursArr, [], 0);
 console.log(lima);
 
 // Store array 
-let storeLocations = [seattle, tokyo, dubai, paris, lima];
 
 let table = document.getElementById('data'); 
 
@@ -109,11 +104,40 @@ Location.prototype.render = function () {
  lima.render();
 
 
+ let storeLocations = [seattle, tokyo, dubai, paris, lima,];
+
+ // New Store
+ function capitalize (name) {
+    return name[0].toUpperCase() +  
+    name.slice(1);
+}
+
+let newStore = document.getElementById('newStore');
+newStore.addEventListener('submit', createStore);
+
+function createStore(event){
+    event.preventDefault();
+    let form = event.target;
+    let name = capitalize(form.name.value);
+    let minCust = form.minCust.value;
+    let maxCust = form.maxCust.value;
+    let avgCookies = form.avgCookies.value;
+    let store = new Location (name, minCust, maxCust, avgCookies, hoursArr, [], 0);
+    console.log(store);
+    storeLocations.push(store);
+    store.render();
+    calcTotalSales();
+    renderFooter();
+}
+
+ // Empty array to hold hourly totals and daily totals
+let allTotals = Array(hoursArr.length).fill(0); 
+// [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,];
+
  // Help from Manuch!
 function calcTotalSales(i) {
     let hourlyTotal = 0;
     let dailyTotal = 0;
-
     // iterates over store locations and hours open, then accesses each store location and each sales per hour, adding them together
     for (let i = 0; i < storeLocations.length; i++){
         for (let j = 0; j < hoursArr.length; j++){
@@ -127,7 +151,7 @@ function calcTotalSales(i) {
 }
 
 // console.log(allTotals);
-calcTotalSales();
+// calcTotalSales();
 
 // Creates totals footer and adds in total values
 function renderFooter() {
@@ -145,4 +169,5 @@ function renderFooter() {
     table.appendChild(row);
 }
 
-renderFooter();
+// renderFooter();
+

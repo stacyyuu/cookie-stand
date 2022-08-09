@@ -86,3 +86,9 @@ li {
 footer {
     text-align: center;
 }
+
+#newStore {
+    margin: auto;
+    text-align: center;
+    width: 500px;
+}
