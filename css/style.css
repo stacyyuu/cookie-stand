@@ -64,6 +64,7 @@ a {
 
 #intro {
     display: flex;
+    text-align: center;
     flex-direction: column;
     color: salmon;
     margin-top: 30px;
@@ -71,10 +72,16 @@ a {
     align-items: center;
 }
 
+#menu {
+    text-align: center;
+    font-size: 30px;
+    color: salmon;
+}
+
 #salmon {
     margin-top: 15px;
-    height: 100px;
-    width: 350px;
+    height: 250px;
+    width: 500px;
 }
 
 li {

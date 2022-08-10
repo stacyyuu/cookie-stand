@@ -103,8 +103,15 @@ Location.prototype.render = function () {
  paris.render();
  lima.render();
 
+  // Empty array to hold hourly totals and daily totals
+let allTotals = Array(hoursArr.length).fill(0); 
+// [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,];
+let storeLocations = [seattle, tokyo, dubai, paris, lima,];
 
- let storeLocations = [seattle, tokyo, dubai, paris, lima,];
+ calcTotalSales();
+ renderFooter();
+
+
 
  // New Store
  function capitalize (name) {
@@ -130,12 +137,9 @@ function createStore(event){
     renderFooter();
 }
 
- // Empty array to hold hourly totals and daily totals
-let allTotals = Array(hoursArr.length).fill(0); 
-// [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,];
 
  // Help from Manuch!
-function calcTotalSales(i) {
+function calcTotalSales() {
     let hourlyTotal = 0;
     let dailyTotal = 0;
     // iterates over store locations and hours open, then accesses each store location and each sales per hour, adding them together
@@ -147,15 +151,21 @@ function calcTotalSales(i) {
 
         dailyTotal += storeLocations[i].daily;
     }
-    allTotals.push(dailyTotal);
+
+    allTotals[14] = dailyTotal;
 }
 
 // console.log(allTotals);
-// calcTotalSales();
+
 
 // Creates totals footer and adds in total values
 function renderFooter() {
+    let element = document.getElementById('totals');
+    if (element != null) {
+        element.remove();
+    }
     let row = document.createElement('tr');
+    row.setAttribute('id','totals');
     let cell = document.createElement('td');
     cell.innerText = ('Totals');
     row.appendChild(cell);
