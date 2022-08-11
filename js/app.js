@@ -52,7 +52,7 @@ console.log(paris);
 let lima = new Location ('Lima', 2, 16, 4.6, hoursArr, [], 0);
 console.log(lima);
 
-// Store array 
+
 
 let table = document.getElementById('data'); 
 
@@ -106,6 +106,8 @@ Location.prototype.render = function () {
   // Empty array to hold hourly totals and daily totals
 let allTotals = Array(hoursArr.length).fill(0); 
 // [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,];
+
+// Array for store location objects
 let storeLocations = [seattle, tokyo, dubai, paris, lima,];
 
  calcTotalSales();
@@ -113,12 +115,10 @@ let storeLocations = [seattle, tokyo, dubai, paris, lima,];
 
  // Help from Manuch!
 function calcTotalSales() {
-    // let hourlyTotal = 0;
     let dailyTotal = 0;
-    // iterates over store locations and hours open, then accesses each store location and each sales per hour, adding them together
+    // Iterates over store locations and hours open, then accesses each store location and each sales per hour, adding them together
     for (let i = 0; i < storeLocations.length; i++){
         for (let j = 0; j < hoursArr.length; j++){
-            // hourlyTotal += storeLocations[i].sales[j];
             allTotals[j] += storeLocations[i].sales[j];
         }
 
@@ -127,9 +127,6 @@ function calcTotalSales() {
 
     allTotals[14] = dailyTotal;
 }
-
-// console.log(allTotals);
-
 
 // Creates totals footer and adds in total values
 function renderFooter() {
@@ -151,10 +148,6 @@ function renderFooter() {
     }
     table.appendChild(row);
 }
-
-// renderFooter();
-
-
 
  // New Store
  function capitalize (name) {
@@ -181,16 +174,15 @@ function createStore(event){
     updateFooter();
 }
 
-  // Empty array to hold hourly totals and daily totals
+  // Second empty array to include new stores sales
   let allTotals2 = Array(hoursArr.length).fill(0); 
 
 function updateTotalSales() {
-    // let hourlyTotal = 0;
     let dailyTotal = 0;
-    // iterates over store locations and hours open, then accesses each store location and each sales per hour, adding them together
+    // Iterates over store locations and hours open, then accesses each store location and each sales per hour, adding them together
     for (let i = 0; i < storeLocations.length; i++){
         for (let j = 0; j < hoursArr.length; j++){
-            // hourlyTotal += storeLocations[i].sales[j];
+            // Add to new array with new store sales
             allTotals2[j] += storeLocations[i].sales[j];
         }
 
@@ -200,12 +192,12 @@ function updateTotalSales() {
     allTotals2.push(dailyTotal);
 }
 
-// console.log(allTotals);
 
-
-// Creates totals footer and adds in total values
+// Updates totals footer with new store
 function updateFooter() {
+    // Accesses 'Totals' footer by id and removes previous values
     let element = document.getElementById('totals');
+    // If element does not contain 'null', meaning if it has data, then remove the contents
     if (element != null) {
         element.remove();
     }
