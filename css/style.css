@@ -6,6 +6,12 @@ body {
 
 html, body { height: 100%;}
 
+html {
+    width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 body > footer {
   position: sticky;
   top: 100vh;
@@ -16,6 +22,8 @@ h1 {
     text-align: center;
     font-size: 2rem;
 }
+
+/* sales data  */
 
 table {
     margin: auto; 
@@ -30,14 +38,17 @@ table, th, td {
 
 th, td {
     padding: 1rem;
+    background-color:  #CFBFA7;
+    color: white;
 }
 
 td {
-    background-color: salmon;
+    background-color:  #CFBFA7;
     color: white;
 }
 
 #homepage {
+    margin-top: 20px;
     text-align: center;
     color: salmon;
 }
@@ -46,12 +57,13 @@ a {
     text-decoration: none;
     color: white;
 }
-/* Main page */
+
+/* main page */
 
 #header {
     display: flex;
     justify-content: center;
-    background-color: salmon;
+    background-color: #EA9999;
     height: 70px;
 }
 
@@ -66,7 +78,7 @@ a {
     display: flex;
     text-align: center;
     flex-direction: column;
-    color: salmon;
+    color: #EA9999;
     margin-top: 30px;
     font-size: 30px;
     align-items: center;
@@ -75,7 +87,8 @@ a {
 #menu {
     text-align: center;
     font-size: 30px;
-    color: salmon;
+    color: #EA9999;
+    margin-bottom: 20px;
 }
 
 #salmon {
@@ -86,16 +99,76 @@ a {
 
 li {
     display: inline-block;
-    padding: 20px;
+    padding: 18px;
     margin-top: 10px;
 }
 
 footer {
     text-align: center;
+    background-color: #EA9999;
+    color: white;
+    height: 30px;
+    padding: 5px;
 }
 
 #newStore {
     margin: auto;
     text-align: center;
     width: 500px;
+    border: 1.5px solid #CFBFA7;
 }
+
+
+/* menu items  */
+
+#flavor1 {
+    display: flex;
+    color: #797545;
+    margin-right: 150px;
+    margin-left: 50px;
+}
+
+#matcha {
+    width: 0px;
+}
+
+#matchatxt {
+    margin-top: -25px;
+    text-align: center;
+}
+
+#flavor2 {
+    display: flex;
+    color: #C7B889;
+    margin-right: 200px;
+}
+
+#vanilla {
+    width: 30px;
+}
+
+#vanillatxt {
+    margin-top: -25px;
+    text-align: center;
+}
+
+#flavor3 {
+    display: flex;
+    color: #E68585;
+    margin-right: -10px;
+}
+
+#redbean {
+    width: 30px;
+}
+
+#redbeantxt {
+    margin-top: -25px;
+    text-align: center;
+}
+
+#menulist {
+    display: flex;
+    width: 80%;
+}
+

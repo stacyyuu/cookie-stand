@@ -111,41 +111,14 @@ let storeLocations = [seattle, tokyo, dubai, paris, lima,];
  calcTotalSales();
  renderFooter();
 
-
-
- // New Store
- function capitalize (name) {
-    return name[0].toUpperCase() +  
-    name.slice(1);
-}
-
-let newStore = document.getElementById('newStore');
-newStore.addEventListener('submit', createStore);
-
-function createStore(event){
-    event.preventDefault();
-    let form = event.target;
-    let name = capitalize(form.name.value);
-    let minCust = form.minCust.value;
-    let maxCust = form.maxCust.value;
-    let avgCookies = form.avgCookies.value;
-    let store = new Location (name, minCust, maxCust, avgCookies, hoursArr, [], 0);
-    console.log(store);
-    storeLocations.push(store);
-    store.render();
-    calcTotalSales();
-    renderFooter();
-}
-
-
  // Help from Manuch!
 function calcTotalSales() {
-    let hourlyTotal = 0;
+    // let hourlyTotal = 0;
     let dailyTotal = 0;
     // iterates over store locations and hours open, then accesses each store location and each sales per hour, adding them together
     for (let i = 0; i < storeLocations.length; i++){
         for (let j = 0; j < hoursArr.length; j++){
-            hourlyTotal += storeLocations[i].sales[j];
+            // hourlyTotal += storeLocations[i].sales[j];
             allTotals[j] += storeLocations[i].sales[j];
         }
 
@@ -180,4 +153,31 @@ function renderFooter() {
 }
 
 // renderFooter();
+
+
+
+ // New Store
+ function capitalize (name) {
+    return name[0].toUpperCase() +  
+    name.slice(1);
+}
+
+let newStore = document.getElementById('newStore');
+newStore.addEventListener('submit', createStore);
+
+function createStore(event){
+    event.preventDefault();
+    let form = event.target;
+    let name = capitalize(form.name.value);
+    let minCust = form.minCust.value;
+    let maxCust = form.maxCust.value;
+    let avgCookies = form.avgCookies.value;
+    let store = new Location (name, minCust, maxCust, avgCookies, hoursArr, [], 0);
+
+    console.log(store);
+    storeLocations.push(store);
+    store.render();
+    calcTotalSales();
+    renderFooter();
+}
 
