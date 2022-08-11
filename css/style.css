@@ -172,3 +172,45 @@ footer {
     width: 80%;
 }
 
+/* contact */
+
+#globe {
+    height: 300px;
+}
+
+#locations {
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 65%;
+    display: flex;
+    color: #EA9999;
+}
+
+#locationlist {
+
+    font-size: 20px;
+}
+
+#phone {
+    height: 300px;
+}
+
+#contact {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    display: flex;
+    color: #EA9999;
+    width: 60%;
+}
+
+#contactlist {
+    line-height: 0px;
+    font-size: 20px;
+}
+
+#hours {
+    color:#EA9999;
+    margin-bottom: 30px;
+}
