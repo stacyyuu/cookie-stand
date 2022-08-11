@@ -177,7 +177,49 @@ function createStore(event){
     console.log(store);
     storeLocations.push(store);
     store.render();
-    calcTotalSales();
-    renderFooter();
+    updateTotalSales();
+    updateFooter();
 }
 
+  // Empty array to hold hourly totals and daily totals
+  let allTotals2 = Array(hoursArr.length).fill(0); 
+
+function updateTotalSales() {
+    // let hourlyTotal = 0;
+    let dailyTotal = 0;
+    // iterates over store locations and hours open, then accesses each store location and each sales per hour, adding them together
+    for (let i = 0; i < storeLocations.length; i++){
+        for (let j = 0; j < hoursArr.length; j++){
+            // hourlyTotal += storeLocations[i].sales[j];
+            allTotals2[j] += storeLocations[i].sales[j];
+        }
+
+        dailyTotal += storeLocations[i].daily;
+    }
+
+    allTotals2.push(dailyTotal);
+}
+
+// console.log(allTotals);
+
+
+// Creates totals footer and adds in total values
+function updateFooter() {
+    let element = document.getElementById('totals');
+    if (element != null) {
+        element.remove();
+    }
+    let row = document.createElement('tr');
+    row.setAttribute('id','totals');
+    let cell = document.createElement('td');
+    cell.innerText = ('Totals');
+    row.appendChild(cell);
+    table.appendChild(row);
+
+    for (let i = 0; i < allTotals2.length; i++){
+        cell = document.createElement('td');
+        cell.innerText = allTotals2[i];
+        row.appendChild(cell);
+    }
+    table.appendChild(row);
+}
