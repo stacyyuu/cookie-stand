@@ -171,6 +171,7 @@ function createStore(event){
     storeLocations.push(store);
     store.render();
     
+    // Iterate over allTotals array and add in new store sales data for totals
     for (let i = 0; i < allTotals.length; i ++){
         for (let j = 0; j < store.sales.length; j++) {
             allTotals[i] += store.sales[j];
