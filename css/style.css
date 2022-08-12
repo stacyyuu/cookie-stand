@@ -1,5 +1,5 @@
 body {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Merriweather Sans', sans-serif;
     width: 80%;
     margin: auto;
 }
@@ -91,7 +91,6 @@ a {
     margin-top: 30px;
     font-size: 45px;
     align-items: center;
-    font-family: 'Merriweather Sans', sans-serif;;
 }
 
 #menu {
@@ -99,7 +98,6 @@ a {
     font-size: 30px;
     color: #EA9999;
     margin-bottom: 20px;
-    font-family: font-family: 'Merriweather Sans', sans-serif;;
 }
 
 #salmon {
@@ -141,7 +139,6 @@ footer {
     text-align: center;
     color: #EA9999;
     font-size: 30px;
-    font-family: font-family: 'Merriweather Sans', sans-serif;;
     line-height: 35px;
 }
 
@@ -215,8 +212,19 @@ footer {
 }
 
 #locationlist {
-
     font-size: 20px;
+}
+
+#locationshead {
+    font-family: 'Pacifico', cursive;
+    font-size: 40px;
+    line-height: 30px;
+}
+
+#contacthead {
+    font-family: 'Pacifico', cursive;
+    font-size: 40px;
+    line-height: 30px;
 }
 
 #phone {
@@ -239,7 +247,7 @@ footer {
 
 #hours {
     color:#EA9999;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 
@@ -256,7 +264,7 @@ footer {
     margin-left: auto;
     margin-right: auto;
     margin-top: 20px;
-    font-size: 17px;
+    font-size: 20px;
     text-align: center;
 }
 
@@ -270,8 +278,8 @@ footer {
     width: 70%;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 20px;
-    font-size: 17px;
+    margin-bottom: 20px;
+    font-size: 20px;
     text-align: center;
 }
 
