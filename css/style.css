@@ -27,13 +27,12 @@ h1 {
 
 table {
     margin: auto; 
-    /* centers the table, by contents filling up each side*/
     border-spacing: 0px;
     border-radius: 10px;
 }
 
 table, th, td {
-    border: .5px solid black;
+    border: .5px solid white;
 }
 
 th, td {
@@ -126,11 +125,32 @@ footer {
 
 #newStore {
     margin: auto;
+    line-height: 18px;
+    padding: 10px;
     text-align: center;
     width: 500px;
     border: 1.5px solid #CFBFA7;
     color: #EA9999;
 }
+
+#submit {
+    color: #EA9999;
+    background-color: whitesmoke;
+    border: none;
+    height: 30px;
+    width: 100px;
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+
+input {
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: hidden;
+    background-color: #eee;
+}
+
 
 #review {
     width: 70%;
