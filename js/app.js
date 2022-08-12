@@ -170,13 +170,51 @@ function createStore(event){
     console.log(store);
     storeLocations.push(store);
     store.render();
-    
-    // Iterate over allTotals array and add in new store sales data for totals
-    for (let i = 0; i < allTotals.length; i ++){
-        for (let j = 0; j < store.sales.length; j++) {
-            allTotals[i] += store.sales[j];
-        }
-    }
+    // for (let i = 0; i < allTotals.length; i ++){
+    //     for (let j = 0; j < store.sales.length; j++) {
+    //         allTotals[i] += store.sales[j];
+    // }
+    updateTotalSales();
+    updateFooter();
 }
 
-  
+
+  // Second empty array to include new stores sales
+  let allTotals2 = Array(hoursArr.length).fill(0); 
+
+function updateTotalSales() {
+    let dailyTotal = 0;
+    // Iterates over store locations and hours open, then accesses each store location and each sales per hour, adding them together
+    for (let i = 0; i < storeLocations.length; i++){
+        for (let j = 0; j < hoursArr.length; j++){
+            // Add to new array with new store sales
+            allTotals2[j] += storeLocations[i].sales[j];
+        }
+        dailyTotal += storeLocations[i].daily;
+    }
+    allTotals2.push(dailyTotal);
+}
+
+
+// Updates totals footer with new store
+function updateFooter() {
+    // Accesses 'Totals' footer by id and removes previous values
+    let element = document.getElementById('totals');
+    // If element does not contain 'null', meaning if it has data, then remove the contents
+    if (element != null) {
+        element.remove();
+    }
+    let row = document.createElement('tr');
+    row.setAttribute('id','totals');
+    let cell = document.createElement('td');
+    cell.innerText = ('Totals');
+    row.appendChild(cell);
+    table.appendChild(row);
+
+    for (let i = 0; i < allTotals2.length; i++){
+        cell = document.createElement('td');
+        cell.innerText = allTotals2[i];
+        row.appendChild(cell);
+    }
+    table.appendChild(row);
+}
