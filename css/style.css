@@ -58,6 +58,13 @@ a {
     color: white;
 }
 
+#saleshead { 
+    font-family: 'Pacifico', cursive;
+    font-size: 45px;
+    color: #EA9999;
+    letter-spacing: 2px;
+}
+
 /* main page */
 
 #header {
@@ -68,10 +75,12 @@ a {
 }
 
 #storename {
-    margin-top: 18px;
+    margin-top: 12px;
     margin-right: 10px;
     color: white;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 40px;
+    letter-spacing: 2px;
+    font-family: 'Pacifico', cursive;;
 }
 
 #intro {
@@ -80,8 +89,9 @@ a {
     flex-direction: column;
     color: #EA9999;
     margin-top: 30px;
-    font-size: 30px;
+    font-size: 45px;
     align-items: center;
+    font-family: 'Merriweather Sans', sans-serif;;
 }
 
 #menu {
@@ -89,6 +99,7 @@ a {
     font-size: 30px;
     color: #EA9999;
     margin-bottom: 20px;
+    font-family: font-family: 'Merriweather Sans', sans-serif;;
 }
 
 #salmon {
@@ -107,9 +118,11 @@ footer {
     text-align: center;
     background-color: #EA9999;
     color: white;
-    height: 30px;
+    height: 40px;
     padding: 5px;
-    font-weight: bold;
+    font-size: 25px;
+    font-family: 'Pacifico', cursive;
+    letter-spacing: 2px;
 }
 
 #newStore {
@@ -117,6 +130,19 @@ footer {
     text-align: center;
     width: 500px;
     border: 1.5px solid #CFBFA7;
+}
+
+#review {
+    width: 70%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #EA9999;
+    font-size: 30px;
+    font-family: font-family: 'Merriweather Sans', sans-serif;;
+    line-height: 35px;
 }
 
 
@@ -216,6 +242,7 @@ footer {
     margin-bottom: 30px;
 }
 
+
 /* about page */
 
 #baker {
@@ -254,4 +281,16 @@ footer {
 
 #bio3 {
     margin: auto;
+}
+
+#bio2head {
+    font-family: 'Pacifico', cursive;
+    font-size: 40px;
+    line-height: 65px;
+}
+
+#bio3head {
+    font-family: 'Pacifico', cursive;
+    font-size: 40px;
+    line-height: 65px;
 }
