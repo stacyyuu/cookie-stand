@@ -72,6 +72,7 @@ a {
     justify-content: center;
     background-color: #EA9999;
     height: 70px;
+    font-size: 20px;
 }
 
 #storename {
@@ -89,7 +90,7 @@ a {
     flex-direction: column;
     color: #EA9999;
     margin-top: 30px;
-    font-size: 45px;
+    font-size: 40px;
     align-items: center;
 }
 
@@ -128,6 +129,7 @@ footer {
     text-align: center;
     width: 500px;
     border: 1.5px solid #CFBFA7;
+    color: #EA9999;
 }
 
 #review {
@@ -264,7 +266,7 @@ footer {
     margin-left: auto;
     margin-right: auto;
     margin-top: 20px;
-    font-size: 20px;
+    font-size: 21px;
     text-align: center;
 }
 
@@ -279,7 +281,7 @@ footer {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 20px;
-    font-size: 20px;
+    font-size: 21px;
     text-align: center;
 }
 
