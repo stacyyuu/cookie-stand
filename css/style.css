@@ -109,6 +109,7 @@ footer {
     color: white;
     height: 30px;
     padding: 5px;
+    font-weight: bold;
 }
 
 #newStore {
@@ -213,4 +214,44 @@ footer {
 #hours {
     color:#EA9999;
     margin-bottom: 30px;
+}
+
+/* about page */
+
+#baker {
+    height: 400px;
+}
+
+#bio {
+    display: flex;
+    color: #EA9999;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    font-size: 17px;
+    text-align: center;
+}
+
+#boy {
+    height: 400px;
+}
+
+#first {
+    display: flex;
+    color: #EA9999;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    font-size: 17px;
+    text-align: center;
+}
+
+#bio2 {
+    margin: auto;
+}
+
+#bio3 {
+    margin: auto;
 }
