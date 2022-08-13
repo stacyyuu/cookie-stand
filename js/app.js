@@ -126,6 +126,7 @@ function calcTotalSales() {
 
     allTotals[14] = dailyTotal;
     
+    // Deletes previous totals row when adding new store 
     let element = document.getElementById('totals');
     if (element != null) {
         element.remove();
@@ -146,7 +147,7 @@ function calcTotalSales() {
     table.appendChild(row);
 }
 
- // New Store
+ // New Store, capitalizing first letter when input
  function capitalize (name) {
     return name[0].toUpperCase() +  
     name.slice(1);
