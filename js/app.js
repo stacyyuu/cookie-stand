@@ -53,7 +53,6 @@ let lima = new Location ('Lima', 2, 16, 4.6, hoursArr, [], 0);
 console.log(lima);
 
 
-
 let table = document.getElementById('data'); 
 
 // Create headers for table using hours array 
@@ -160,9 +159,9 @@ function createStore(event){
     event.preventDefault();
     let form = event.target;
     let name = capitalize(form.name.value);
-    let minCust = form.minCust.value;
-    let maxCust = form.maxCust.value;
-    let avgCookies = form.avgCookies.value;
+    let minCust = parseInt(form.minCust.value);
+    let maxCust = parseInt(form.maxCust.value);
+    let avgCookies = parseFloat(form.avgCookies.value);
     let store = new Location (name, minCust, maxCust, avgCookies, hoursArr, [], 0);
 
     console.log(store);
